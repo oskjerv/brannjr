@@ -1,0 +1,51 @@
+{% extends "background.html" %}
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'polls/styles_animation.css' %}">
+<link rel="stylesheet" href="{% static 'polls/football_pitch.css' %}">
+
+{% endblock stylesheets %}
+
+{% block content %}
+    <div class="pitch-container">
+        <div class="football-pitch">
+            <div class="first-column-border"></div>
+                <div class="team-positions subs">
+                    <img src="{% static 'polls/brann.png' %}" alt="Image 1">
+                    <img src="brann.png" alt="Image 1">
+                    <img src="brann.png" alt="Image 1">
+                </div>
+            <div class="team-positions goalkeeper">
+                <img src="brann.png" alt="Image 1">
+            </div>
+            
+            <div class="team-positions defense">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+            </div>
+            <div class="team-positions defensive-midfield">
+                <img src="brann.png" alt="Image 1">
+            </div>  
+            <div class="team-positions central-midfield">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+            </div>
+            <div class="team-positions offensive-midfield"></div>
+            
+            <div class="team-positions attack">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+                <img src="brann.png" alt="Image 1">
+            </div>
+            
+        </div>
+    </div>
+        
+    
+    
+
+{% endblock %}

@@ -1,0 +1,252 @@
+{% extends "main.html" %}
+
+{% load polls_extras %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'polls/styles_noanimation.css' %}">
+<link rel="stylesheet" href="{% static 'polls/football_pitch.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+<div class="pitch-container">
+    {% csrf_token %}
+    <div class="football-pitch">
+        <span class="pitch-messages">
+            
+            <p><b>Branns beste spiller mot Astana. {{ votes.sum }} stemmer. </b> <a class="vote-button" href="/">Hjem</a></p>
+
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        </span>
+        <div class="team-positions subs">
+            <span>
+                <p style="color:#842121;">Fra benken:</p>
+            </span>
+            {% for player in match.player_set.all %}
+            {% if player.subbed == True%}
+            <label>
+                <span>{{ player.lastname }}({{player.position}})</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+            </label>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions goalkeeper">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position == 'GK'%}
+
+            <label>
+
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{player.mom_votes|divide:votes.sum }}%</div>
+
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions defense">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions defensive-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RDM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LDM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions central-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions offensive-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RAM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LAM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions attack">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RW' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCF' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCF' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LW' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+
+
+
+        </fieldset>
+
+
+
+        </form>
+
+
+
+
+        {% endblock %}

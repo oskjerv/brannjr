@@ -1,0 +1,15 @@
+id;position;goals;assists;started;subbed;rating;mom_votes;match_id;player_id
+1;GK;0;0;t;f;4;0;2;27
+2;RB;0;0;t;f;4;0;2;39
+3;LCB;0;0;t;f;4;0;2;32
+4;RCB;0;0;t;f;4;0;2;38
+5;LB;0;0;t;f;4;0;2;33
+6;LAM;0;0;t;f;4;0;2;46
+7;DM;0;0;t;f;4;0;2;43
+8;RAM;1;0;t;f;5;0;2;42
+9;RW;0;0;t;f;4;0;2;45
+10;CF;0;0;t;f;4;0;2;51
+11;LW;0;1;t;f;4;0;2;49
+13;CF;1;0;f;t;5;0;2;50
+14;LW;0;0;f;t;4;0;2;44
+12;AM;0;1;f;t;4;0;2;48

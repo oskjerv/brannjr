@@ -1,0 +1,294 @@
+{% extends "main.html" %}
+
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'polls/styles_noanimation.css' %}">
+<link rel="stylesheet" href="{% static 'polls/football_pitch.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+<form action="{% url 'polls:vote' match.id %}" method="post" , class="pitch-container">
+    {% csrf_token %}
+    <fieldset class="football-pitch">
+        <span class="pitch-messages">
+            <p>Stem på Branns beste spiller mot {{ match.opponent }}. <input class="vote-button" type="submit"
+                    value="Stem"></p>
+
+            <p><i class="fa fa-dice-six"></i> Kaspers vurdering.</p>
+
+            {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        </span>
+        <div class="team-positions subs">
+            <span>
+                <p style="color:#842121;">Fra benken:</p>
+            </span>
+            {% for player in match.player_set.all %}
+            {% if player.subbed == True%}
+            <label>
+
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}({{player.position}})</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa-solid fa-dice-{{ player.rating_string }}"></i>
+            </label>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions goalkeeper">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position == 'GK'%}
+
+            <label>
+
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions defense">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LB' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions defensive-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LDM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RDM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions central-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'CM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions offensive-midfield">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LAM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RAM' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+            </label>
+
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="team-positions attack">
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RW' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LCF' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'RCF' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            {% for player in match.player_set.all %}
+            {% if player.subbed == False and player.position in 'LW' %}
+
+            <label>
+                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                <i class="fa fa-dice-{{ player.rating_string }}"></i>
+
+
+            </label>
+            {% endif %}
+            {% endfor %}
+
+            
+        </div>
+
+    </fieldset>
+</form>
+
+
+{% endblock %}

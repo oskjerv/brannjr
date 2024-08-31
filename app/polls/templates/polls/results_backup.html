@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'polls/styles_noanimation.css' %}">
+{% endblock stylesheets %}
+
+{% block content %}
+
+
+<h1>{{ match.opponent }}</h1>
+
+<ul>
+{% for player in match.player_set.all %}
+    <li>{{ player.player.name }} -- {{ player.mom_votes }} vote{{ player.mom_votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' match.id %}">Vote again?</a>
+
+{% endblock %}

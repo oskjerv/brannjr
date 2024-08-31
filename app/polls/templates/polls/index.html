@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'polls/styles_animation.css' %}">
+<link rel="stylesheet" href="{% static 'polls/football_pitch.css' %}">
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+{% if latest_match_list %}
+
+<div class="voter-container">
+    <div class="list-group match-list">
+
+        {% for match in latest_match_list %}
+            
+            <a class="list-group-item" href="/polls/{{ match.id }}/"><i class="fa-solid fa-futbol"></i> {{ match.opponent }} - {{ match.get_day }}<br></a>
+        {% endfor %}
+
+    </div>
+        
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

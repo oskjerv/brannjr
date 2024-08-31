@@ -1,0 +1,27 @@
+name;shirt_no
+Mathias Dyngeland;1
+Martin Børsheim;12
+Mathias Klausen;24
+Eirik Holmen Johansen;36
+Martin Hellan;2
+Fredrik Pallesen Knudsen;3
+Joachim Soltvedt;17
+Rasmus Holten;43
+Japhet Sery Larsen;6
+Svenn Crone;13
+Jonas Torsvik;15
+Ruben Kristiansen;21
+Thore Pedersen;23
+Eivind Helland;26
+Sakarias Opsahl;5
+Felix Horn Myhre;8
+Emil Kornvig;10
+Ulrik Mathisen;14
+Ole Didrik Blomberg;16
+Sander Kartum;18
+Niklas Wassberg;25
+Mads Sande;27
+Niklas Castro;9
+Bård Finne;11
+Aune Heggebø;20
+Moonga Simba;22
