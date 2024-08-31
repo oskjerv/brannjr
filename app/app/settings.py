@@ -136,9 +136,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-<<<<<<< HEAD
-STATIC_ROOT =  BASE_DIR / 'productionfiles'
-=======
-STATIC_ROOT = os.environ.get('STATICFILES')
->>>>>>> 027fa9bb6c989e43f8f29e4329acb0906c769095
-
+STATIC_ROOT = BASE_DIR / 'productionfiles'
