@@ -14,6 +14,8 @@ media
 testing/
 .my_pgpass
 
+.env
+
 # Backup files # 
 *.bak 
 

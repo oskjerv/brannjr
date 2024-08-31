@@ -56,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -87,7 +89,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {
             "service": "brannjr_service",
-            "passfile": os.environ.get('my_pgpass'),
+            "passfile": os.environ.get('my_pgpass')
         },
     }
 }
@@ -134,9 +136,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'polls/static/'
-]
+STATIC_ROOT = BASE_DIR / 'productionfiles'
 
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
