@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3ir^l74uue-a)&(f097m+5xgp9-sjflsrjc$qe!%_e^=fq3_49'
+
+#rom dotenv import load_dotenv
+
+load_dotenv()  # Loads variables from .env into os.environ
+SECRET_KEY = os.environ.get('BRANNJR_SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = os.environ.get('SERVERNAMES').split(' ')
 
 
 # Application definition
@@ -79,7 +87,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "OPTIONS": {
             "service": "brannjr_service",
-            "passfile": ".my_pgpass",
+            "passfile": os.environ.get('my_pgpass'),
         },
     }
 }
