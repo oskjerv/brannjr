@@ -94,6 +94,7 @@ p span {
   width: 75px;
   height: 35px;
   background: #cc3026;
+  box-shadow:6px 2px 0px #842121;
   -webkit-border-radius: 100px / 50px;
   border-radius: 100px / 50px;
   z-index: 1;
