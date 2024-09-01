@@ -6,11 +6,22 @@ body {
   /*border-bottom: .75vh solid #a32620;*/
 }
 
+.voter-container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40%;
+  width: 50%;
+  position: relative;
+  
+}
+
 @media only screen and (max-width: 1300px) {
   body {
     font-size: 2.3em;
     /*border-bottom: .75vh solid #a32620;*/
   }
+
   .voter-container{
     width: 80%;
   }
@@ -108,16 +119,6 @@ p span {
   -webkit-border-radius: 100px / 50px;
   border-radius: 100px / 50px;
   z-index: 1;
-}
-
-.voter-container{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40%;
-  width: 50%;
-  position: relative;
-  
 }
 
 .cloud:before {
