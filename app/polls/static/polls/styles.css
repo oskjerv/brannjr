@@ -2,6 +2,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   background-color: #f07f77;
   margin:0px;
+  font-size: 1.5em;
   /*border-bottom: .75vh solid #a32620;*/
 }
 
