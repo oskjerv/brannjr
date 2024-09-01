@@ -34,7 +34,7 @@
 
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa-solid fa-dice-{{ player.rating_string }}"></i>
             </label>
             {% endif %}
@@ -50,7 +50,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
 
@@ -67,7 +67,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -82,7 +82,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -97,7 +97,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -112,7 +112,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -128,7 +128,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -136,13 +136,13 @@
             {% endif %}
             {% endfor %}
             {% for player in match.player_set.all %}
-            {% if player.subbed == False and player.position in 'RDM' %}
+            {% if player.subbed == False and player.position in 'HDM' %}
 
             <label>
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -158,7 +158,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -173,7 +173,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -188,7 +188,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -204,7 +204,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -218,7 +218,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
             </label>
@@ -234,7 +234,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
 
@@ -249,7 +249,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
 
@@ -264,7 +264,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
 
@@ -279,7 +279,7 @@
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
-                <div class="vote-result" style="width:0px;visibility:hidden;"></div>
+                
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
 
 

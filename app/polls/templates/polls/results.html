@@ -105,7 +105,7 @@
         </div>
         <div class="team-positions defensive-midfield">
             {% for player in match.player_set.all %}
-            {% if player.subbed == False and player.position in 'RDM' %}
+            {% if player.subbed == False and player.position in 'HDM' %}
 
             <label>
                 <img src="{% static 'polls/image.png' %}" alt="Image 1">
