@@ -23,13 +23,13 @@
 
 @media only screen and (max-width: 1300px) {
   .pitch-container {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     /*border-bottom: .75vh solid #a32620;*/
   }
 
   .team-positions >label> i {
     color:#842121;
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 
   .football-pitch > div {
