@@ -98,6 +98,7 @@ p span {
   margin-right: auto;
   margin-top: 40%;
   width: 50%;
+  position: relative;
   
 }
 
@@ -217,4 +218,15 @@ input {
 
 .match-list > a:hover {
   color:#cb3c3c;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f07f77;
+  color: white;
+  text-align: center;
+  border-bottom: 1vh solid #842121;
 }
