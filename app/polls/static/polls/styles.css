@@ -6,6 +6,13 @@ body {
   /*border-bottom: .75vh solid #a32620;*/
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 2em;
+    /*border-bottom: .75vh solid #a32620;*/
+  }
+}
+
 h1 {
   font-family: 'Roboto Mono', monospace;
   font-weight: 700; /* Bold */
