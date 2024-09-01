@@ -39,7 +39,7 @@
             </label>
             {% endif %}
             {% endfor %}
-            <a class="results-button" href="/polls/{{match.id}}/results">Resultater</a>
+            <a class="results-button" href="{% url 'polls:results' match.id %}">Resultater</a>
         </div>
         <div class="team-positions goalkeeper">
             {% for player in match.player_set.all %}
