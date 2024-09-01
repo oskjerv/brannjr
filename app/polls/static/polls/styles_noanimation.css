@@ -33,7 +33,7 @@
 @keyframes trophy-animate 
 {
   0%{
-    transform: translateY(11.5) scale(1);
+    transform: translateY(11.5vh) scale(1);
     visibility:visible;
     opacity:1;
   }
