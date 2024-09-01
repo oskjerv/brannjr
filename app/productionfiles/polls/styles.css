@@ -16,16 +16,6 @@ body {
   
 }
 
-@media only screen and (max-width: 1300px) {
-  body {
-    font-size: 2.3em;
-    /*border-bottom: .75vh solid #a32620;*/
-  }
-
-  .voter-container{
-    width: 80%;
-  }
-}
 
 h1 {
   font-family: 'Roboto Mono', monospace;
@@ -276,4 +266,20 @@ input {
   color: white;
   text-align: center;
   border-bottom: 1vh solid #842121;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  body {
+    font-size: 2.3em;
+    /*border-bottom: .75vh solid #a32620;*/
+  }
+
+  .voter-container{
+    width: 80%;
+  }
+
+  .vote-button, .results-button {
+    font-size: 1em;
+  }
 }
