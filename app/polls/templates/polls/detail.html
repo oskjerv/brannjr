@@ -11,12 +11,14 @@
 {% block content %}
 
 
+
 <form action="{% url 'polls:vote' match.id %}" method="post" , class="pitch-container">
     {% csrf_token %}
     <fieldset class="football-pitch">
         <span class="pitch-messages">
-            <p>Stem på Branns beste spiller mot {{ match.opponent }}. <input class="vote-button" type="submit"
-                    value="Stem"></p>
+            <p>Stem på Branns beste spiller mot {{ match.opponent }}. <input class="vote-button" type="submit" value="Stem"></p>
+
+            
 
             <p><i class="fa fa-dice-six"></i> Kaspers vurdering.</p>
 
@@ -37,6 +39,7 @@
             </label>
             {% endif %}
             {% endfor %}
+            <a class="results-button" href="/polls/{{match.id}}/results">Resultater</a>
         </div>
         <div class="team-positions goalkeeper">
             {% for player in match.player_set.all %}
