@@ -28,7 +28,7 @@
             {% for player in match.player_set.all %}
             {% if player.subbed == True%}
             <label>
-                <span>{{ player.lastname }}({{player.position}})</span>
+                <span>{{ player.lastname }}</span>
                 <div class="vote-result" style="width: {{ player.mom_votes|divide:votes.sum }}px;">{{ player.mom_votes|divide:votes.sum }}%</div>
             </label>
             {% endif %}
