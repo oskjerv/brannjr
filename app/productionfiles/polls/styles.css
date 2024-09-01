@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   background-color: #f07f77;
   margin:0px;
-  border-bottom: .75vh solid #a32620;
+  /*border-bottom: .75vh solid #a32620;*/
 }
 
 h1 {
@@ -73,6 +73,12 @@ p span {
 .mountain-cap-3 { left: 5px; }
 
 
+.cloud-container{
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+}
+
 .cloud-image{
   position: absolute;
   height: 75px;
@@ -84,8 +90,8 @@ p span {
 
 .cloud, .cloud:before, .cloud:after {
   position: absolute;
-  width: 8vh;
-  height: 4vh;
+  width: 75px;
+  height: 35px;
   background: #cc3026;
   -webkit-border-radius: 100px / 50px;
   border-radius: 100px / 50px;
