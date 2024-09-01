@@ -94,7 +94,7 @@ input + span {
 }
 
 input:checked + span, input:hover + span {
-  border: 2px dashed red;
+  border: 4px dashed red;
 }
 
 
