@@ -84,8 +84,8 @@ p span {
 
 .cloud, .cloud:before, .cloud:after {
   position: absolute;
-  width: 70px;
-  height: 30px;
+  width: 8vh;
+  height: 4vh;
   background: #cc3026;
   -webkit-border-radius: 100px / 50px;
   border-radius: 100px / 50px;
@@ -137,9 +137,9 @@ top: -10px;
 .trophy{
   position: relative;
   visibility:hidden;
-  bottom: 10px;
+  /*bottom: 10px;
   height: 10px;
-  top: -25px;
+  top: -25px;*/
   z-index: 1;
   margin-left: 45px;
   -webkit-animation: trophy 10s;
