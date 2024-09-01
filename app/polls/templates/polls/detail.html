@@ -16,7 +16,7 @@
     {% csrf_token %}
     <fieldset class="football-pitch">
         <span class="pitch-messages">
-            <p>Stem på Branns beste spiller mot {{ match.opponent }} ({{ match.get_day }}). <input class="vote-button" type="submit" value="Stem"></p>
+            <p>Stem på Branns beste spiller mot {{ match.opponent }} ({{ match.get_day }}2). <input class="vote-button" type="submit" value="Stem"></p>
 
             
 
@@ -33,7 +33,7 @@
             <label>
 
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
-                <span>{{ player.lastname }}({{player.position}})</span>
+                <span>{{ player.lastname }}</span>
                 <div class="vote-result" style="width:0px;visibility:hidden;"></div>
                 <i class="fa-solid fa-dice-{{ player.rating_string }}"></i>
             </label>
