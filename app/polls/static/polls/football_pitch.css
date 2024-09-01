@@ -12,6 +12,15 @@
 
 }
 
+.football-pitch > div {
+  display: flex;
+  gap: 15px;
+  text-align: center;
+  padding: 0px 10px;
+  font-size: 20px;
+}
+
+
 @media only screen and (max-width: 1300px) {
   .pitch-container {
     min-height: 100vh;
@@ -41,13 +50,6 @@
 
 .pitch-messages{
   text-align: center;
-}
-.football-pitch > div {
-  display: flex;
-  gap: 15px;
-  text-align: center;
-  padding: 0px 10px;
-  font-size: 20px;
 }
 
 .football-pitch > p {
