@@ -8,7 +8,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 2em;
+    font-size: 3em;
     /*border-bottom: .75vh solid #a32620;*/
   }
 }
