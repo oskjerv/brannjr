@@ -47,8 +47,9 @@
 
             <label>
 
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <span>{{ player.lastname }}</span>
                 
                 <i class="fa fa-dice-{{ player.rating_string }}"></i>
@@ -64,7 +65,7 @@
             {% if player.subbed == False and player.position in 'RB' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -79,7 +80,7 @@
             {% if player.subbed == False and player.position in 'LCB' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -94,7 +95,7 @@
             {% if player.subbed == False and player.position in 'RCB' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -109,7 +110,7 @@
             {% if player.subbed == False and player.position in 'LB' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -125,7 +126,7 @@
             {% if player.subbed == False and player.position in 'LDM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -139,7 +140,7 @@
             {% if player.subbed == False and player.position in 'HDM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -155,7 +156,7 @@
             {% if player.subbed == False and player.position in 'CM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -170,7 +171,7 @@
             {% if player.subbed == False and player.position in 'RCM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -185,7 +186,7 @@
             {% if player.subbed == False and player.position in 'LCM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -201,7 +202,7 @@
             {% if player.subbed == False and player.position in 'LAM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -215,7 +216,7 @@
             {% if player.subbed == False and player.position in 'RAM' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -231,7 +232,7 @@
             {% if player.subbed == False and player.position in 'RW' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -246,7 +247,7 @@
             {% if player.subbed == False and player.position in 'LCF' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -261,7 +262,7 @@
             {% if player.subbed == False and player.position in 'RCF' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 
@@ -276,7 +277,7 @@
             {% if player.subbed == False and player.position in 'LW' %}
 
             <label>
-                <img src="{% static 'polls/image.png' %}" alt="Image 1">
+                <img src="{% static 'polls/brannplayer.png' %}" alt="Image 1" class="img-player">
                 <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
                 <span>{{ player.lastname }}</span>
                 

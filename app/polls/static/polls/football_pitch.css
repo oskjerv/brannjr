@@ -28,7 +28,7 @@
   }
 
   .team-positions >label> i {
-    color:#842121;
+
     font-size: 1.5em;
   }
 
@@ -93,9 +93,23 @@ input + span {
   border: 2px dashed transparent;
 }
 
-input:checked + span, input:hover + span {
-  border: 4px dashed red;
+.team-positions >label> i {
+  color:#842121;
+  font-size: 1.2em;
 }
+
+input:checked + span, input:hover + span,
+input:checked + i, input:hover + i,
+input:checked > .fa, input:hover > .fa {
+  color:#FFD700;
+  border-bottom:1px solid #FFD700;
+}
+
+
+
+/*input:checked + img, input:hover + img {
+  border: 4px dashed red;
+}*/
 
 
 /* Horizontal alignment in the first column */
