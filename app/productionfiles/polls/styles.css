@@ -7,11 +7,17 @@ body {
 }
 
 .voter-container{
-  display: block;
+  /*display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 40%;
   width: 50%;
+  position: relative;*/
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
   position: relative;
   
 }
@@ -246,6 +252,8 @@ input {
 .match-list > a {
   color:#842121;
   text-decoration: none;
+  display: block;
+  margin-top: .5em;
 }
 
 .match-list > a:hover {
@@ -270,9 +278,7 @@ input {
     /*border-bottom: .75vh solid #a32620;*/
   }
 
-  .voter-container{
-    width: 80%;
-  }
+
 
   .vote-button, .results-button {
     font-size: 1em;

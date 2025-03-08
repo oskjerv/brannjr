@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('BRANNJR_SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = os.environ.get('SERVERNAMES').split(' ')
 
 
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fontawesome'
+
 ]
 
 MIDDLEWARE = [

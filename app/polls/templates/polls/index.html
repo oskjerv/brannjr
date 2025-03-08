@@ -5,26 +5,51 @@
 {% block stylesheets %}
 <link rel="stylesheet" href="{% static 'polls/styles_animation.css' %}">
 <link rel="stylesheet" href="{% static 'polls/football_pitch.css' %}">
+<link rel="stylesheet" href="{% static 'polls/styles_pagination.css' %}">
 
 {% endblock stylesheets %}
 
 {% block content %}
 
-{% if latest_match_list %}
+{% if page_obj %}
 
 <div class="voter-container">
     <div class="list-group match-list">
 
-        {% for match in latest_match_list %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <!--<a href="?page=1">&laquo; first</a>-->
+                    <a href="?page={{ page_obj.previous_page_number }}"><i class="fa-solid fa-arrow-left"></i></a>
+                {% else %}
+                    <span class="pagination-placeholder"></span>
+                {% endif %}
+        
+                <!--<span class="current">
+                    Side {{ page_obj.number }} av {{ page_obj.paginator.num_pages }}.
+                </span>-->
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}"><i class="fa-solid fa-arrow-right"></i></a>
+                    <!--<a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>-->
+                {% else %}
+                    <span class="pagination-placeholder"></span>
+                {% endif %}
+            </span>
+        </div>
+        
+        {% for match in page_obj %}
             
             <a class="list-group-item" href="/polls/{{ match.id }}/"><i class="fa-solid fa-futbol"></i> {{ match.opponent }} - {{ match.get_day }}<br></a>
         {% endfor %}
+        
 
     </div>
         
     {% else %}
         <p>No polls are available.</p>
     {% endif %}
+
 </div>
 
 {% endblock %}

@@ -1,0 +1,45 @@
+.pagination {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;*/
+}
+
+.step-links {
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.step-links a {
+    text-decoration: none;
+    background-color: transparent;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.step-links a:hover {
+    
+    background-color: #842121;
+}
+
+.step-links .current {
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: .8em;
+    background-color: transparent;
+    border: dashed 1px #842121;
+    color: #842121;
+}
+
+.pagination-placeholder{
+    visibility: hidden;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+}

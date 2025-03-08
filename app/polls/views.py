@@ -8,14 +8,25 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.db.models import Count, Sum, Avg, Max, Min
 
+from django.core.paginator import Paginator
+from django.views.generic import ListView
+
 
 from .models import Squad, Match, Player
 
 
 def index(request):
-    latest_match_list = Match.objects.order_by("-date")[:5]
-    context = {"latest_match_list": latest_match_list}
-    return render(request, "polls/index.html", context)
+    match_list = Match.objects.order_by("-date")  # get all match objects ordered by date
+    paginator = Paginator(match_list, 5)  # Show 25 contacts per page.
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, "polls/index.html", {"page_obj": page_obj})
+    #return render(request, "list.html", {"page_obj": page_obj})
+
+    
+    #context = {"latest_match_list": latest_match_list}
+    #return render(request, "polls/index.html", context)
 
 def detail(request, match_id):
     match = get_object_or_404(Match, pk=match_id)

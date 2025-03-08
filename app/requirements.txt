@@ -2,4 +2,5 @@ asgiref==3.8.1
 Django==5.1
 psycopg2==2.9.9
 sqlparse==0.5.1
-whitenoise=6.7.0
+whitenoise==6.7.0
+fontawesome==5.10.1
