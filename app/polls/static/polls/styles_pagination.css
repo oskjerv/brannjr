@@ -45,7 +45,7 @@
 }
 
 /* Apply this style only on small screens (smartphones) */
-@media (max-width: 768px) {
+@media only screen and (max-width: 1300px)
     .pagination a {
         width: 50%; /* Make each button take half the width */
         text-align: center; /* Center the text/icon */
