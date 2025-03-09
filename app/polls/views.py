@@ -1,4 +1,5 @@
 from django.db.models import F
+import hashlib
 
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
@@ -12,7 +13,7 @@ from django.core.paginator import Paginator
 from django.views.generic import ListView
 
 
-from .models import Squad, Match, Player, VoteRecord
+from .models import Squad, Match, Player, VoteLog
 
 
 def index(request):
@@ -51,10 +52,11 @@ def results(request, match_id):
 def vote(request, match_id):
     match = get_object_or_404(Match, pk=match_id)
     user_ip = get_client_ip(request)
+    hashed_ip = hash_ip(user_ip)
     
     print(user_ip)
     
-    if has_voted(user_ip, match):
+    if has_voted(hashed_ip, match):
         return render(
             request,
             "polls/detail.html",
@@ -66,7 +68,7 @@ def vote(request, match_id):
     
     try:
         selected_choice = match.player_set.get(pk=request.POST["choice"])
-        VoteRecord.objects.create(ip_address=user_ip, match=match)
+        VoteLog.objects.create(hashed_ip=hashed_ip, match=match)
         
     except (KeyError, Player.DoesNotExist):
         # Redisplay the question voting form.
@@ -86,8 +88,8 @@ def vote(request, match_id):
         # user hits the Back button.
         return HttpResponseRedirect(reverse("polls:results", args=(match.id,)))
     
-def has_voted(ip, match):
-    return VoteRecord.objects.filter(ip_address=ip, match=match).exists()
+def has_voted(hashed_ip, match):
+    return VoteLog.objects.filter(hashed_ip=hashed_ip, match=match).exists()
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -96,3 +98,6 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
+def hash_ip(ip_address):
+    return hashlib.sha256(ip_address.encode()).hexdigest()

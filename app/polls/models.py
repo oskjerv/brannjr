@@ -1,4 +1,6 @@
 import datetime
+#import hashlib
+
 
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -125,13 +127,14 @@ class Player(models.Model):
         return self.player.name + ' (' + self.position + ')' + ' - ' + self.match.opponent
 
 
-class VoteRecord(models.Model):
-    ip_address = models.GenericIPAddressField()  # Stores IPv4 or IPv6
+class VoteLog(models.Model):
+    #ip_address = models.GenericIPAddressField()  # Stores IPv4 or IPv6
+    hashed_ip = models.CharField(max_length=64)
     match = models.ForeignKey(Match, on_delete=models.CASCADE)  # Foreign key to Match
 
     class Meta:
-        unique_together = ('ip_address', 'match')  # Prevent duplicate votes
+        unique_together = ('hashed_ip', 'match')  # Prevent duplicate votes
 
     def __str__(self):
-        return f"IP {self.ip_address} voted on {self.match}"
+        return f"IP {self.hashed_ip} voted on {self.match}"
     
