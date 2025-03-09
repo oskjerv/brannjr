@@ -12,7 +12,7 @@ from django.core.paginator import Paginator
 from django.views.generic import ListView
 
 
-from .models import Squad, Match, Player
+from .models import Squad, Match, Player, VoteRecord
 
 
 def index(request):
@@ -50,8 +50,23 @@ def results(request, match_id):
 
 def vote(request, match_id):
     match = get_object_or_404(Match, pk=match_id)
+    user_ip = get_client_ip(request)
+    
+    print(user_ip)
+    
+    if has_voted(user_ip, match):
+        return render(
+            request,
+            "polls/detail.html",
+            {
+                "match": match,
+                "error_message": "Du har allerede stemt.",
+            },
+        )
+    
     try:
         selected_choice = match.player_set.get(pk=request.POST["choice"])
+        VoteRecord.objects.create(ip_address=user_ip, match=match)
         
     except (KeyError, Player.DoesNotExist):
         # Redisplay the question voting form.
@@ -70,3 +85,14 @@ def vote(request, match_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("polls:results", args=(match.id,)))
+    
+def has_voted(ip, match):
+    return VoteRecord.objects.filter(ip_address=ip, match=match).exists()
+
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip

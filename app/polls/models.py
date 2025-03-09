@@ -123,4 +123,15 @@ class Player(models.Model):
     
     def __str__(self):
         return self.player.name + ' (' + self.position + ')' + ' - ' + self.match.opponent
+
+
+class VoteRecord(models.Model):
+    ip_address = models.GenericIPAddressField()  # Stores IPv4 or IPv6
+    match = models.ForeignKey(Match, on_delete=models.CASCADE)  # Foreign key to Match
+
+    class Meta:
+        unique_together = ('ip_address', 'match')  # Prevent duplicate votes
+
+    def __str__(self):
+        return f"IP {self.ip_address} voted on {self.match}"
     
