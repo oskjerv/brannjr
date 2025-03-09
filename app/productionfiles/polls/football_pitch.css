@@ -70,13 +70,13 @@
 }
 
 .subs {
-  grid-column: 2 / 3; /* Start at column 2, end at column 3 */
-  grid-row: 1 / 7; /* Span all five rows */
+  grid-column: 1 / 5; /* Start at column 2, end at column 3 */
+  grid-row: 1 /1; /* Span all five rows */
 }
 
 .subs{
   border: 1px solid #842121;
-  flex-direction: column;
+  flex-direction: row;
   margin:auto;
 }
 

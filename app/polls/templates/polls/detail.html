@@ -16,31 +16,15 @@
     {% csrf_token %}
     <fieldset class="football-pitch">
         <span class="pitch-messages">
-            <p>Stem på Branns beste spiller mot {{ match.opponent }} ({{ match.get_day }}). <input class="vote-button" type="submit" value="Stem"></p>
-
-            
-
-            <p><i class="fa fa-dice-six"></i> Kaspers vurdering.</p>
+            <p><a class="results-button" href="{% url 'polls:results' match.id %}">Resultater</a></p>
+            <p>Kasper har trillet terningen.</p> 
+            <p>Hvem mener du var best mot {{ match.opponent }}?</p>
+            <p>Velg en spiller, og klikk <input class="vote-button" type="submit" value="Stem"></p>
+            <!--p><i class="fa fa-dice-six"></i> Kaspers vurdering.</p-->
 
             {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         </span>
-        <div class="team-positions subs">
-            <span>
-                <p style="color:#842121;">Fra benken:</p>
-            </span>
-            {% for player in match.player_set.all %}
-            {% if player.subbed == True%}
-            <label>
-
-                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
-                <span>{{ player.lastname }}</span>
-                
-                <i class="fa-solid fa-dice-{{ player.rating_string }}"></i>
-            </label>
-            {% endif %}
-            {% endfor %}
-            <a class="results-button" href="{% url 'polls:results' match.id %}">Resultater</a>
-        </div>
+        
         <div class="team-positions goalkeeper">
             {% for player in match.player_set.all %}
             {% if player.subbed == False and player.position == 'GK'%}
@@ -290,7 +274,26 @@
             
         </div>
 
+        <div class="team-positions subs">
+            <span>
+                <p style="color:#842121;">Fra benken:</p>
+            </span>
+            {% for player in match.player_set.all %}
+            {% if player.subbed == True%}
+            <label>
+
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ player.id }}">
+                <span>{{ player.lastname }}</span>
+                
+                <i class="fa-solid fa-dice-{{ player.rating_string }}"></i>
+            </label>
+            {% endif %}
+            {% endfor %}
+            
+        </div>
+        
     </fieldset>
+    
 </form>
 
 
