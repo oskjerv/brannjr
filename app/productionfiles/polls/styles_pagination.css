@@ -13,10 +13,10 @@
 
 .step-links a {
     text-decoration: none;
-    background-color: transparent;
+    background-color: #e36c64;
     color: white;
     padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 75px;
     font-weight: bold;
     font-size: 1em;
     transition: background-color 0.3s ease-in-out;
@@ -45,19 +45,19 @@
 }
 
 /* Apply this style only on small screens (smartphones) */
-@media only screen and (max-width: 1300px)
+@media only screen and (max-width: 1300px) {
     .pagination a {
-        width: 50%; /* Make each button take half the width */
+        /*width: 50%; /* Make each button take half the width */
         text-align: center; /* Center the text/icon */
         padding: 15px; /* Bigger touch area */
     }
 
     .step-links a {
         text-decoration: none;
-        background-color: #842121;
+        background-color: #e36c64;
         color: white;
         padding: 8px 12px;
-        border-radius: 5px;
+        /*border-radius: 5px;*/
         font-weight: bold;
         font-size: 1em;
         transition: background-color 0.3s ease-in-out;
