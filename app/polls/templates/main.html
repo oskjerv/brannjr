@@ -137,14 +137,6 @@
       //  tooltip.classList.toggle("show");
     //}
 
-    // Prevent voting if consent is not given
-    function checkBeforeVoting(event) {
-        if (!getCookie("cookie_consent")) {
-            event.preventDefault(); // Prevent form submission
-            document.getElementById("consent-tooltip").classList.add("show");
-        }
-    }
-
     // Run on page load
     window.onload = checkConsent;
 </script>
