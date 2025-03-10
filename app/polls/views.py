@@ -69,7 +69,7 @@ def vote(request, match_id):
         )
     
     # Check if the match is older than 14 days
-    if match.date.date() < now().date() - timedelta(days=1000):
+    if match.date.date() < now().date() - timedelta(days=14):
         return render(
             request,
             "polls/detail.html",
