@@ -332,7 +332,7 @@ input {
   padding: 8px 12px;
   font-size: .7em;
   border-radius: 5px;
-  max-width: 200px; /* Limit width to prevent it from stretching too wide */
+  max-width: 250px; /* Limit width to prevent it from stretching too wide */
   width: max-content; /* Ensures it only takes as much width as needed */
   white-space: normal; /* Allow text to wrap */
   word-wrap: break-word; /* Break long words if needed */
@@ -379,7 +379,7 @@ input {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  font-size: .7em;
+  font-size: .8em;
 }
 
 .cookie-btn:hover {
