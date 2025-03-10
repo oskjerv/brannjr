@@ -379,7 +379,7 @@ input {
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: .7em;
 }
 
 .cookie-btn:hover {
