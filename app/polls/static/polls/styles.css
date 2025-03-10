@@ -352,7 +352,7 @@ input {
   transform: translateY(0);
 }
 
-.cookie-container:focus .cookie-tooltip-info {
+.cookie-container:active .cookie-tooltip-info {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
