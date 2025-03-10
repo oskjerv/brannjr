@@ -369,6 +369,11 @@ input {
   .cookie-icon {
     font-size: 2.5em;
   }
+  .cookie-container {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+  }
   }
 
   
