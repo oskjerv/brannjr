@@ -395,6 +395,7 @@ input {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
+  z-index: 1;
 }
 
 .testtooltip .testtooltiptext {
