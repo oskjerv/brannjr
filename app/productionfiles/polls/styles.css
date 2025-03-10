@@ -352,6 +352,12 @@ input {
   transform: translateY(0);
 }
 
+.cookie-container:focus .cookie-tooltip-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 @media only screen and (max-width: 1300px) {
 
   .cookie-tooltip-info,
@@ -388,30 +394,4 @@ input {
 
 .cookie-btn:hover {
   background-color: #218838;
-}
-
-
-.testtooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-  z-index: 1;
-}
-
-.testtooltip .testtooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.testtooltip:hover .testtooltiptext {
-  visibility: visible;
 }
