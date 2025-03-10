@@ -132,6 +132,29 @@
         document.getElementById("consent-tooltip").classList.remove("show");
     }
 
+    document.addEventListener("DOMContentLoaded", function() {
+      // Get the element with id "info-tooltip"
+      const tooltip = document.getElementById("info-tooltip");
+
+      // Function to toggle visibility of the tooltip
+      function toggleTooltipVisibility() {
+          const computedStyle = window.getComputedStyle(tooltip);
+          const visibility = computedStyle.visibility;
+
+          if (visibility === "hidden") {
+              // Set the tooltip to visible
+              tooltip.style.visibility = "visible";
+          } else if (visibility === "visible") {
+              // Set the tooltip to hidden
+              tooltip.style.visibility = "hidden";
+          }
+      }
+
+      // Add click event listener to the tooltip (or any element you want to trigger it)
+      tooltip.addEventListener("click", toggleTooltipVisibility);
+  });
+
+
     // Toggle tooltip when clicking the cookie icon
     //function toggleTooltip() {
      //   let tooltip = document.getElementById("consent-tooltip");
