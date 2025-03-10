@@ -16,8 +16,11 @@
     <div class="football-pitch">
         <span class="pitch-messages">
             
-            <p><b>Branns beste spiller mot {{match.opponent}} ({{ match.get_day }}). {{ votes.sum }} stemmer. </b></p>
-            <a class="vote-button" href="/">Hjem</a>
+            <p>Resultater {{match.opponent}} ({{ match.get_day }}).</p>
+            
+            <p>Antall stemmer: {{ votes.sum }}.</p>
+
+            <p><a class="vote-button" href="/">Hjem</a></p>
 
             {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         </span>

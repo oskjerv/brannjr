@@ -12,6 +12,10 @@ from django.db.models import Count, Sum, Avg, Max, Min
 from django.core.paginator import Paginator
 from django.views.generic import ListView
 
+from datetime import timedelta
+from django.utils.timezone import now
+
+
 
 from .models import Squad, Match, Player, VoteLog
 
@@ -51,12 +55,33 @@ def results(request, match_id):
 
 def vote(request, match_id):
     match = get_object_or_404(Match, pk=match_id)
-    user_ip = get_client_ip(request)
-    hashed_ip = hash_ip(user_ip)
+    #user_ip = get_client_ip(request)
+    #hashed_ip = hash_ip(user_ip)
     
-    print(user_ip)
+    if "cookie_consent" not in request.COOKIES:
+        return render(
+            request,
+            "polls/detail.html",
+            {
+                "match": get_object_or_404(Match, pk=match_id),
+                "error_message": "Du må godta informasjonskapsler for å kunne stemme.",
+            },
+        )
     
-    if has_voted(hashed_ip, match):
+    # Check if the match is older than 14 days
+    if match.date.date() < now().date() - timedelta(days=1000):
+        return render(
+            request,
+            "polls/detail.html",
+            {
+                "match": match,
+                "error_message": "Avstemningen er stengt.",
+            },
+        )
+    
+    
+    # Check if the cookie exists
+    if request.COOKIES.get(f'voted_{match_id}'):
         return render(
             request,
             "polls/detail.html",
@@ -65,10 +90,9 @@ def vote(request, match_id):
                 "error_message": "Du har allerede stemt.",
             },
         )
-    
+
     try:
         selected_choice = match.player_set.get(pk=request.POST["choice"])
-        VoteLog.objects.create(hashed_ip=hashed_ip, match=match)
         
     except (KeyError, Player.DoesNotExist):
         # Redisplay the question voting form.
@@ -86,7 +110,13 @@ def vote(request, match_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse("polls:results", args=(match.id,)))
+        # Set a cookie to mark the user as having voted for this match
+        response = HttpResponseRedirect(reverse("polls:results", args=(match.id,)))
+
+        # Set a cookie with a 1-year expiration time
+        response.set_cookie(f'voted_{match_id}', 'true', max_age=60*60*24*365)  # 1 year
+
+        return response
     
 def has_voted(hashed_ip, match):
     return VoteLog.objects.filter(hashed_ip=hashed_ip, match=match).exists()

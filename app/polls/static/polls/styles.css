@@ -294,3 +294,94 @@ input {
     font-size: 1em;
   }
 }
+
+/* Container for the floating cookie icon */
+.cookie-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+
+/* Cookie icon styling */
+.cookie-icon {
+  font-size: 24px;
+  background-color: #842121;
+  color: #f07f77;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cookie-icon:hover {
+  background-color: #f07f77;
+  color: #842121;
+}
+
+/* Tooltip styling */
+.cookie-tooltip-info,
+.cookie-tooltip-consent {
+  position: absolute;
+  bottom: 120%;
+  right: 50%;
+  transform: translateX(50%);
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 5px;
+  max-width: 200px; /* Limit width to prevent it from stretching too wide */
+  width: max-content; /* Ensures it only takes as much width as needed */
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words if needed */
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+           
+  
+}
+
+/* Show tooltip on hover */
+
+.cookie-container:hover .cookie-tooltip-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 1300px) {
+
+  .cookie-tooltip-info,
+  .cookie-tooltip-consent{
+     max-width: 100px;
+     min-width: 100px;
+  }
+  }
+
+  
+/* Show tooltip */
+.cookie-tooltip-consent.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Button styling */
+.cookie-btn {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cookie-btn:hover {
+  background-color: #218838;
+}
