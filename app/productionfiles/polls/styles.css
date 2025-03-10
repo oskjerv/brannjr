@@ -306,7 +306,7 @@ input {
 
 /* Cookie icon styling */
 .cookie-icon {
-  font-size: 24px;
+  font-size: 1.2em;
   background-color: #842121;
   color: #f07f77;
   padding: 8px;
@@ -358,6 +358,10 @@ input {
   .cookie-tooltip-consent{
      max-width: 75vw;
      min-width: 50vw;
+  }
+
+  .cookie-icon {
+    font-size: 3em;
   }
   }
 
