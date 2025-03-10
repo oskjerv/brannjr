@@ -366,12 +366,12 @@ input {
   }
 
   
-/* Show tooltip 
+/* Show tooltip */
 .cookie-tooltip-consent.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}*/
+}
 
 /* Button styling */
 .cookie-btn {

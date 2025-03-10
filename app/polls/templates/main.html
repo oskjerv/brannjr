@@ -95,7 +95,7 @@
     </div>
   </div>
   <div class="cookie-container">
-    
+    <i class="fa-solid fa-cookie cookie-icon"></i>
     <span class="cookie-tooltip-info" id="info-tooltip">
       <p>Denne siden bruker 🍪 for å holde kontroll på hvilke kamper du har stemt på.</p>
       <p>Om kapslene: <ul><li>Samtykkekapsel lagres i 90 dager.</li><li>Hvilke kamper du har stemt på lagres i èn måned.</li></ul></p>
@@ -105,7 +105,7 @@
       <p>Om kapslene: <ul><li>Samtykkekapsel lagres i 90 dager.</li><li>Kapsler som beskriver hvilke kamper du har stemt på lagres i èn måned.</li></ul></p>
       <button class="cookie-btn" onclick="acceptCookies()">Jeg samtykker</button>
     </span>
-    <i class="fa-solid fa-cookie cookie-icon"></i>
+    
   </div>
 
   <script>
@@ -131,35 +131,6 @@
         document.cookie = "cookie_consent=true; path=/; max-age=" + 60 * 60 * 24 * 90; // 1 year
         document.getElementById("consent-tooltip").classList.remove("show");
     }
-
-    
-    // Get the element with id "info-tooltip"
-    const tooltip = document.getElementById("info-tooltip");
-
-    // Function to toggle visibility of the tooltip
-    function toggleTooltipVisibility() {
-        const computedStyle = window.getComputedStyle(tooltip);
-        const visibility = computedStyle.visibility;
-
-        if (visibility === "hidden") {
-            // Set the tooltip to visible
-            tooltip.style.visibility = "visible";
-        } else if (visibility === "visible") {
-            // Set the tooltip to hidden
-            tooltip.style.visibility = "hidden";
-        }
-    }
-
-    // Add click event listener to the tooltip (or any element you want to trigger it)
-    tooltip.addEventListener("touchend", toggleTooltipVisibility);
-
-
-
-    // Toggle tooltip when clicking the cookie icon
-    //function toggleTooltip() {
-     //   let tooltip = document.getElementById("consent-tooltip");
-      //  tooltip.classList.toggle("show");
-    //}
 
     // Run on page load
     window.onload = checkConsent;
