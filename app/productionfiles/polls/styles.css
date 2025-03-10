@@ -346,7 +346,7 @@ input {
 
 /* Show tooltip on hover */
 
-.cookie-container:hover .cookie-tooltip-info {
+.cookie-container:hover, .cookie-container:active .cookie-tooltip-info {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
