@@ -361,17 +361,17 @@ input {
   }
 
   .cookie-icon {
-    font-size: 3em;
+    font-size: 2.5em;
   }
   }
 
   
-/* Show tooltip */
+/* Show tooltip 
 .cookie-tooltip-consent.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-}
+}*/
 
 /* Button styling */
 .cookie-btn {
