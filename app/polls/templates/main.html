@@ -105,7 +105,7 @@
       <p>Denne siden bruker 🍪 for å få stemmegivingen til å fungere.</p>
       <p>Om kapslene: <ul><li>Samtykkekapsel lagres i 90 dager.</li><li>Kapsler som beskriver hvilke kamper du har stemt på lagres i èn måned.</li></ul></p>
       <button class="cookie-btn" onclick="acceptCookies()">Jeg samtykker</button>
-    </span2>
+    </span>
     
   </div>
 
@@ -133,14 +133,6 @@
         document.getElementById("consent-tooltip").classList.remove("show");
     }
 
-    function useHasHover() {
-      try {
-        return matchMedia('(hover: hover)').matches
-      } catch {
-        // Assume that if browser too old to support matchMedia it's likely not a touch device
-        return true
-      }
-    }
     // Run on page load
     window.onload = checkConsent;
 </script>

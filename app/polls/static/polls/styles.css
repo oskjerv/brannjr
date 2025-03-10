@@ -352,6 +352,12 @@ input {
   transform: translateY(0);
 }
 
+.cookie-container:focus .cookie-tooltip-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 @media only screen and (max-width: 1300px) {
 
   .cookie-tooltip-info,
