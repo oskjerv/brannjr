@@ -55,7 +55,8 @@ p span {
     bottom:0;
     /*border-bottom: 10px solid #842121;*/
 }
-.mountain, .mountain-two, .mountain-three, .mountain-four {
+.mountain-one, .mountain-two, .mountain-three, .mountain-four,
+.mountain-five, .mountain-six, .mountain-seven {
   position: absolute;
   bottom: 0;
   border-left: 150px solid transparent;
@@ -63,25 +64,63 @@ p span {
   border-bottom: 180px solid #a32620;
   z-index: 3;
 }
+.mountain-three, .mountain-seven{
+  border-bottom: 180px solid #f07f77;
+}
+
+.mountain-three .mountain-cap-1,
+.mountain-three .mountain-cap-2,
+.mountain-three .mountain-cap-3,
+.mountain-seven .mountain-cap-1,
+.mountain-seven .mountain-cap-2,
+.mountain-seven .mountain-cap-3{
+  border-top: 25px solid #a32620;
+}
+
+.mountain-three .mountain-top,
+.mountain-seven .mountain-top{
+  border-bottom: 77px solid #a32620;
+}
+
 .mountain-two { 
   left: 80px;
   bottom: 0px;
   opacity: .7;
-  z-index: 2;
+  z-index: 1;
 }
 .mountain-three {
   left: -60px;
   bottom: 0px;
-  opacity: .5;
+  opacity: 1;
   z-index: 2;
 }
 
 .mountain-four {
   left: 200px;
   bottom:0px;
+  opacity: 1;
+  z-index: 3;
+}
+
+.mountain-five{
+  left: -105px;
+  bottom:0px;
+  opacity: .8;
+  z-index: 1;
+}
+.mountain-six {
+  left: 270px;
+  bottom:0px;
   opacity: .2;
   z-index: 1;
 }
+.mountain-seven {
+  left: 160px;
+  bottom:0px;
+  opacity: 1;
+  z-index: 2;
+}
+
 .mountain-top {
   position: absolute;
   right: -65px;
