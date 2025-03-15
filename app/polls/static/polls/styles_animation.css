@@ -1,21 +1,38 @@
+@media only screen and (max-width: 1300px) {
+  .cloud, .rain{ 
+    bottom: 12vh !important;
+          
+  }
+
+  @-webkit-keyframes cloud{
+    0%   { left: 16vw !important; }
+    100% { left: 16vw !important; } 
+  }
+  @keyframes cloud {
+    0%   { left: 16vw !important; }
+    100% { left: 16vw !important; } 
+  }
+  
+}
 
 
 
 .cloud, .rain{ 
-  bottom: 10vh;
-  -webkit-animation: cloud 10s;
-          animation: cloud 10s;
+  z-index: 0 !important;
+  bottom: 20vh;
+  -webkit-animation: cloud 15s;
+          animation: cloud 15s;
           animation-fill-mode: forwards;
         
 }
 
 @-webkit-keyframes cloud{
-  0%   { left: -10vw; }
-  100% { left: 70vw; } 
+  0%   { left: 8vw; }
+  100% { left: 8vw; } 
 }
 @keyframes cloud {
-  0%   { left: -10vw; }
-  100% { left: 70vw; } 
+  0%   { left: 8vw; }
+  100% { left: 8vw; } 
 }
 
 
@@ -57,9 +74,9 @@
   }
 
   70%{
-    transform: translateY(10vh) scale(1)
+    transform: translateY(20vh) scale(1)
   }
   100%{
-    transform: translateY(10vh) scale(0)
+    transform: translateY(20vh) scale(0)
   }
 }

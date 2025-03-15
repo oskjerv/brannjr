@@ -9,13 +9,13 @@
 }
 
 @-webkit-keyframes cloud{
-  0%   { left: 70vw; }
-  100% { left: 70vw; } 
+  0%   { left: 12.5vw; }
+  100% { left: 12.5vw; } 
 }
 @keyframes cloud {
  
-  0%   { left: 70vw; }
-  100% { left: 70vw; } 
+  0%   { left: 12.5vw; }
+  100% { left: 12.5vw; } 
 }
 
 
