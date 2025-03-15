@@ -315,6 +315,7 @@ input {
   display: flex;
   align-items: center;
   font-size: .5em;
+  z-index: 9999;
 }
 
 .cookie-icon {
@@ -350,6 +351,12 @@ input {
   white-space: normal; /* Allow text to wrap */
   word-wrap: break-word; /* Break long words if needed */
   display: none;
+  opacity: 1;
+  z-index:9999 !important;
+}
+
+.fa{
+  z-index: inherit;
 }
 
 .cookie-tooltip-info p, 
