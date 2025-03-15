@@ -30,7 +30,7 @@ class Squad(models.Model):
     
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['name', 'shirt_no'], name='unique_name_shirtno')
+            models.UniqueConstraint(fields=['name', 'shirt_no', 'active'], name='unique_name_shirtno')
         ]
     
     def __str__(self):
