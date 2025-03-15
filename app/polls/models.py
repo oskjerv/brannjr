@@ -26,6 +26,7 @@ def validate_non_negative(value):
 class Squad(models.Model):
     name = models.CharField(max_length=200)
     shirt_no = models.IntegerField(default=None)
+    active = models.BooleanField(default=True)
     
     class Meta:
         constraints = [
