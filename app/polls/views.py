@@ -58,7 +58,9 @@ def vote(request, match_id):
     #user_ip = get_client_ip(request)
     #hashed_ip = hash_ip(user_ip)
     
-    if "cookie_consent" not in request.COOKIES:
+    cookie_value = request.COOKIES.get('cookieConsent')  # Get cookie value
+
+    if not cookie_value or cookie_value == "rejected":  
         return render(
             request,
             "polls/detail.html",
