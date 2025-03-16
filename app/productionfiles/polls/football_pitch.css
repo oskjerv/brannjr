@@ -21,6 +21,7 @@
 }
 
 
+
 @media only screen and (max-width: 1300px) {
   .pitch-container {
     /*min-height: 100vh;*/
@@ -75,7 +76,7 @@
 }
 
 .subs{
-  border: 1px solid #842121;
+  border-left: 1px solid #842121;
   flex-direction: column;
   margin:auto;
 }
