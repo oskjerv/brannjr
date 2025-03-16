@@ -410,6 +410,7 @@ input {
   /* Align to the right */
   gap: 10px;
   /* Space between the containers */
+  z-index: 9999;
 }
 
 
@@ -423,7 +424,6 @@ input {
   padding: 10px;
   border-radius: 8px;
   /*width: 250px;*/
-  z-index: 9999;
 }
 
 .question-container a{
@@ -463,6 +463,7 @@ input {
 
 .question-tooltip-info,
 .cookie-tooltip-info {
+  font-family: inherit;
   position: absolute;
   bottom: 30px;
   right: 0;
@@ -483,7 +484,6 @@ input {
   /* Break long words if needed */
   display: none;
   opacity: 1;
-  z-index: 9999;
 }
 
 .cookie-tooltip-info p,
