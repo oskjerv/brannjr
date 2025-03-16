@@ -118,20 +118,32 @@
       </div>
     </div>
   </div>
-  <div class="cookie-container" id="cookie-container">
-    <i class="fa-solid fa-cookie-bite cookie-icon" id="cookie-icon"></i>
-    <span class="cookie-tooltip-info" id="info-tooltip">
-      <p>Denne siden bruker 🍪 for å holde kontroll på hvilke kamper du har stemt på.</p>
-      <p>Om informasjonskapslene:</p>
-      <ul>
-        <li>Samtykkekapsel lagres i 90 dager.</li>
-        <li>Hvilke kamper du har stemt på lagres i èn måned.</li>
-      </ul>
-      <div class="cookie-buttons">
-        <button class="cookie-btn accept-btn" id="accept-btn" onclick="acceptCookies()">Godta</button>
-        <button class="cookie-btn reject-btn" id="reject-btn" onclick="rejectCookies()">Avslå</button>
-      </div>
-    </span>
+  <div class="bottom-right-container">
+    <div class="question-container" id="question-container">
+      <i class="fa-solid fa-circle-question question-icon" id="question-icon"></i>
+      <span class="question-tooltip-info" id="question-tooltip">
+        <p>Kasper debuterte med sesongkort på stadion som syvåring i Obos. Han står på Frydenbø, og etter kamp lager han sin
+          egen spillerbørs.</p>
+        <p>Du kan stemme på kampens beste spiller. Avstemmingen stenger 14 dager etter kampdag.</p>
+        <p><a href="mailto:kontakt@brannjr.no">kontakt@brannjr.no</a></p>
+      </span>
+    </div>
+
+    <div class="cookie-container" id="cookie-container">
+      <i class="fa-solid fa-cookie-bite cookie-icon" id="cookie-icon"></i>
+      <span class="cookie-tooltip-info" id="info-tooltip">
+        <p>Denne siden bruker 🍪 for å holde kontroll på hvilke kamper du har stemt på.</p>
+        <p>Om informasjonskapslene:</p>
+        <ul>
+          <li>Samtykkekapsel lagres i 90 dager.</li>
+          <li>Hvilke kamper du har stemt på lagres i èn måned.</li>
+        </ul>
+        <div class="cookie-buttons">
+          <button class="cookie-btn accept-btn" id="accept-btn" onclick="acceptCookies()">Godta</button>
+          <button class="cookie-btn reject-btn" id="reject-btn" onclick="rejectCookies()">Avslå</button>
+        </div>
+      </span>
+    </div>
   </div>
   {% block content %}
   {% endblock %}

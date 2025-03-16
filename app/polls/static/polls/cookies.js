@@ -14,7 +14,11 @@ function setCookie(name, value, days) {
     return "";
   }
 
+
   document.addEventListener("DOMContentLoaded", function () {
+    const questionIcon = document.getElementById("question-icon");
+    const questionTooltip = document.getElementById("question-tooltip");
+
     const cookieIcon = document.getElementById("cookie-icon");
     const tooltip = document.getElementById("info-tooltip");
     const acceptBtn = document.getElementById("accept-btn");
@@ -41,13 +45,25 @@ function setCookie(name, value, days) {
     cookieIcon.addEventListener("click", function (event) {
       event.stopPropagation();
       tooltip.classList.toggle("active");
+      questionTooltip.classList.remove("active");
     });
+
+    questionIcon.addEventListener("click", function (event) {
+      event.stopPropagation();
+      questionTooltip.classList.toggle("active");
+      tooltip.classList.remove("active");
+    })
 
     document.addEventListener("click", function () {
       tooltip.classList.remove("active");
+      questionTooltip.classList.remove("active");
     });
 
     tooltip.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+
+    questionTooltip.addEventListener("click", function (event) {
       event.stopPropagation();
     });
 
