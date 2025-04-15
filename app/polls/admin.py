@@ -22,6 +22,7 @@ class PlayerAdmin(admin.ModelAdmin):
             initial['match'] = newest_match.pk
         return initial
 
+admin.site.register(Match)
 admin.site.register(Player, PlayerAdmin)
 admin.site.register(Squad)
 
