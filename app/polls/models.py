@@ -92,7 +92,7 @@ class Player(models.Model):
     assists = models.IntegerField(validators=[validate_non_negative], default=0, null=True, blank=True)
     started = models.BooleanField(default=True, null=True, blank=True)
     subbed = models.BooleanField(default=False, null=True, blank=True)
-    rating = models.IntegerField(validators=[validate_rating], default=0)
+    rating = models.IntegerField(validators=[validate_rating], default=1)
     mom_votes = models.IntegerField(default=0)
     
     class Meta:
