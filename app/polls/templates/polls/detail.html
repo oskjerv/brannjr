@@ -60,7 +60,7 @@
             {% endfor %}
 
             {% for player in match.player_set.all %}
-            {% if player.subbed == False and player.position in 'LCB' %}
+            {% if player.subbed == False and player.position in 'RCB' %}
 
             <label>
                 <img src="{% static 'polls/brannplayer.png' %}" alt="{{ player.position }}" class="img-player">
@@ -75,7 +75,7 @@
             {% endfor %}
 
             {% for player in match.player_set.all %}
-            {% if player.subbed == False and player.position in 'RCB' %}
+            {% if player.subbed == False and player.position in 'LCB' %}
 
             <label>
                 <img src="{% static 'polls/brannplayer.png' %}" alt="{{ player.position }}" class="img-player">
